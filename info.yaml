@@ -1,0 +1,11 @@
+codigo: 21166
+nome: História da Matemática
+ano_lectivo: 2023
+semestre: 1
+ano: 1
+docente: António Araújo
+tema:
+  - nome: A Matemática no Antigo Egipto
+    codigo: 1
+  - nome: A Matemática na Mesopotâmia
+    codigo: 2

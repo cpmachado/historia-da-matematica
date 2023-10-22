@@ -1,0 +1,21 @@
+\newcommand{\grupo}[2]{
+	\begin{center}
+		\Large \bfseries GRUPO #1 - #2
+	\end{center}
+	\phantomsection
+	\addcontentsline{toc}{section}{GRUPO #1 - #2}
+}
+
+\newcommand{\problema}[1]{
+	\begin{flushleft}
+		\large \bfseries Problema #1.
+	\end{flushleft}
+	\phantomsection
+	\addcontentsline{toc}{subsection}{Problema #1.}
+}
+
+\newcommand{\alinea}[1]{
+	\indent \textbf{\normalsize #1)}
+	\phantomsection
+	\addcontentsline{toc}{subsubsection}{#1)}
+}

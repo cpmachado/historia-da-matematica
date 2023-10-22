@@ -1,0 +1,40 @@
+\problema{6}
+
+\paragraph{} Pretende-se calcular o complemento de $\frac{2}{3}+\frac{1}{15}$
+à unidade, com o método dos escribas egípcios. Recorreu-se à análise do
+problema 22 do papiro de Rhind\parencite[pág. 37-38]{Estrada2000}, que define
+o seguinte método:
+
+\begin{enumerate}
+	\item Calcular o m.m.c. dos denominadores das fracções;
+	\item Resolver a equação linear a partir dos numeradores das fracções
+		normalizadas ao m.m.c.;
+	\item Calcular a expansão unitária do resultado a dividir pelo m.m.c.,
+		caso este não seja uma fracção unitária.
+\end{enumerate}
+
+\begin{align*}
+	\text{m.m.c.}(3, 15) &= 15 \\
+	\frac{2}{3} + \frac{1}{15} + \frac{a}{15} &= 1\\
+	\iff10 + 1 + a &= 15 \\
+		\iff a &= 4
+\end{align*}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cr|cr}
+		&1&&15\\
+		&$\overline{\overline{3}}$&&10\\
+		&$\overline{2}$&&$7 \; \overline{2}$\\
+		&$\overline{3}$&&5\\
+		&$\overline{4}$&&$3 \; \overline{2} \; \overline{4}$\\
+		\textbackslash&$\overline{5}$&\textbackslash&3\\
+		\textbackslash&$\overline{15}$&\textbackslash&1\\
+		\hline
+		&$5 \; \overline{15}$&&4
+	\end{tabular}
+\end{table}
+
+\paragraph{} O complemento procurado pode ser expresso por
+$5 \; \overline{15}$.
+

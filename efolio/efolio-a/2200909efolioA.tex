@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{csvsimple}
+\usepackage{tcolorbox}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{tikz}
+\usepackage[style=apa]{biblatex}
+\usepackage{hyperref}
+
+\usetikzlibrary {calc,shapes.geometric}
+
+\graphicspath{{imagem}}
+\addbibresource{bibliografia.bib}
+
+% Dados
+\author{Carlos Augusto Gonçalves Collaço e Pinto Machado}
+\newcommand{\numeroEstudante}{2200909}
+\newcommand{\UC}{História da Matemática}
+\newcommand{\codigoUC}{21166}
+\newcommand{\docentes}{António Araújo}
+\newcommand{\curso}{Licenciatura em Matemática e Aplicações}
+\newcommand{\turma}{1}
+\newcommand{\anoLectivo}{2023-2024}
+\date{27/11/2023}
+
+\title{\numeroEstudante - \UC | \codigoUC - \theauthor}
+
+\pagenumbering{arabic}
+
+\hypersetup{
+	pdftitle={\thetitle},
+	pdfsubject={\thetitle},
+	pdfauthor={\theauthor},
+	pdfkeywords={\thetitle}
+}
+
+\makeindex
+
+\newcommand{\exercicio}{
+	\addtocounter{section}{1}
+	\section*{Problema \arabic{section}.}
+	\addcontentsline{toc}{section}{Problema \arabic{section}.}
+}
+
+\begin{document}
+
+\input{capa/default.tex}
+
+\clearpage
+
+\input{ex1.tex}
+\clearpage
+\input{ex2.tex}
+
+\clearpage
+
+\printbibliography[heading=bibintoc,title={Bibliografia}]
+
+\end{document}

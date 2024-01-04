@@ -1,0 +1,58 @@
+\begin{tikzpicture}[scale=0.75, transform shape]
+	\pgfmathsetmacro{\angle}{360/5}
+	\coordinate (p1) at (0, 0);
+	\filldraw (p1) circle (2pt);
+	
+	\foreach \i in {1,...,4} {
+		\pgfmathsetmacro{\x}{cos(\i*\angle + 90)}
+		\pgfmathsetmacro{\y}{sin(\i*\angle + 90) - 1}
+		\coordinate (p2\i) at (\x, \y);
+		\filldraw (p2\i) circle (2pt);
+		\draw (p2\i) -- (p1);
+	}
+	\draw 
+		(p21) --
+		($(p21)!0.5!(p22)$) node[below left] {$2$} --
+		(p22) --
+		($(p22)!0.5!(p23)$) node[below] {$2$} --
+		(p23) --
+		($(p23)!0.5!(p24)$) node[below right] {$2$} --
+		(p24);
+
+	\foreach \i in {1,...,4} {
+		\pgfmathsetmacro{\x}{2*cos(\i*\angle + 90)}
+		\pgfmathsetmacro{\y}{2*sin(\i*\angle + 90) - 2}
+		\coordinate (pn\i) at (\x, \y);
+		\filldraw (pn\i) circle (2pt);
+		\draw[dashed] (p2\i) -- (pn\i);
+	}
+
+	\draw (pn1) -- (pn2) -- (pn3) -- (pn4);
+
+	\node[below left] at ($(pn1)!0.5!(pn2)$) {$n$};
+	\node[below] at ($(pn2)!0.5!(pn3)$) {$n$};
+	\node[below right] at ($(pn3)!0.5!(pn4)$) {$n$};
+
+	\foreach \i in {1,...,4} {
+		\pgfmathsetmacro{\x}{3*cos(\i*\angle + 90)}
+		\pgfmathsetmacro{\y}{3*sin(\i*\angle + 90) - 3}
+		\coordinate (pnp\i) at (\x, \y);
+		\filldraw (pnp\i) circle (2pt);
+		\draw (pn\i) -- (pnp\i);
+	}
+
+	\draw
+		(pnp1) --
+		($(pnp1)!0.5!(pnp2)$) node[below left] {$n + 1$} --
+		(pnp2) --
+		($(pnp2)!0.5!(pnp3)$) node[below] {$n + 1$} --
+		(pnp3) --
+		($(pnp3)!0.5!(pnp4)$) node[below right] {$n + 1$} --
+		(pnp4);
+
+	\node[above left] at (p1) {$p_1$};
+	\node[above left] at (p21) {$p_2$};
+	\node[above left] at (pn1) {$p_n$};
+	\node[above left] at (pnp1) {$p_{n + 1}$};
+
+\end{tikzpicture}

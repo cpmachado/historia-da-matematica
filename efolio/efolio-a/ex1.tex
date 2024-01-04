@@ -1,0 +1,97 @@
+\exercicio{}
+
+\paragraph{\underline{Derivação da fórmula explícita dos números pentagonais}}\hfill
+
+\vspace{0.25cm}
+
+O primeiro número pentagonal é $p_1 = 1$. A cada iteração da construção acrescenta-se ao pentágono
+de ordem $n$, 3 novos lados de $n+1$ pontos, pelo que cada lado exterior perfaz $n+1$ pontos. Dado
+que estes 3 novos lados partilham 2 pontos, obtemos um incremento de
+$3(n + 1) - 2 = 3n + 1$ pontos, ao pentágono de ordem $n$.
+Pelo que obtemos a seguinte sequência:
+\begin{align*}
+	\csvreader[
+		head to column names,
+		late after line = \\
+	]{data/ex1.csv} {}{
+		p_\k &= \sk = \pk
+	}
+	\ldots&
+\end{align*}
+
+\noindent
+De modo a obter uma fórmula para calcular o k-ésimo número pentagonal,comecemos por observar que
+temos uma progressão aritmética de razão $3k -2$, pelo que obtemos a seguinte definição por
+recorrência:
+\begin{align*}
+	p_k =
+	\begin{cases}
+		1, &\text{ se }k = 1\\
+		3k - 2 + p_{k - 1}, &\text{ se }k > 1\\
+	\end{cases}
+\end{align*}
+
+\noindent
+Dado que se $k=1$, tem-se $3k - 2 = 1$, e que:
+\begin{align*}
+	p_k
+		= \sum_{i=1}^{k} (3i - 2)
+		= 3S_k - 2k
+		= 3 \frac{k(k + 1)}{2} -2k
+		= \frac{3k(k + 1) - 4k}{2}
+		= \frac{k(3k - 1)}{2}
+\end{align*}
+Pelo que temos uma fórmula explícita para o k-ésimo termo dos números
+pentagonais, definida por:
+\begin{equation}\label{eq:k-numero-pentagonal}
+	p_k = \sum_{i=1}^{k} (3i-2) = \frac{k(3k - 1)}{2}, \quad k \in \mathbb{N}
+\end{equation}
+
+\noindent
+Esta fórmula está presente em \cite[pág.31]{Kline1990Vol1}, sob a forma $\frac{3n^2 -n }{2}$.
+
+\paragraph{\underline{JUSTIFICAÇÃO GRÁFICA NA PRÓXIMA PÁGINA}}
+
+\paragraph{\underline{Cálculo de $p_{100}$}}\hfill
+
+\vspace{0.25cm}
+
+\noindent
+Com recurso à fórmula descrita na equação
+\textbf{(\ref{eq:k-numero-pentagonal})}, tem-se que:
+\begin{align*}
+	p_{100}
+	&= \frac{100(3 \cdot 100 - 1)}{2} = 50 \cdot (300 - 1)
+	= 15000 - 50 = 14950
+\end{align*}
+
+\clearpage
+
+\paragraph{\underline{Justificação gráfica}}\hfill
+
+\vspace{0.25cm}
+
+A seguinte construção é baseada à fornecida
+em \cite[problema 16.]{HMAF1},
+e em \cite[pág. 33]{Kline1990Vol1}.\\
+Para construir este diagrama, segue-se os seguintes passos:
+\begin{enumerate}
+	\item Começa-se com o pentágono de ordem 1, que é o ponto no topo.
+	\item Constrói-se o pentágono de ordem 2, ao adicionar os 4 pontos, cada com o ponto do topo
+		desenham uma recta sobre
+		o qual os restantes vértices do pentágono de iterações posteriores vão assentar.
+	\item Para construir o pentágono de ordem $n+1$ extende-se os vértices do pentágono por um
+		ponto, e conectam-se essas arestas, que terão $n+1$ pontos de comprimento.
+	\item Dado que os pontos que conectam essas faces são comuns, temos mais $3(n + 1) - 2 = 3n + 1$
+		pontos no pentágono de ordem $n+1$, do que no de ordem $n$.
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\input{tikz/numeros-pentagonais.tex}
+	\caption{Construção iterativa de números pentagonais}
+\end{figure}
+
+
+
+
